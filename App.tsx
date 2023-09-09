@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import Home from './screens/Home';
+import * as font from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+import Navigator from './routes/homeStack';
+
+SplashScreen.preventAutoHideAsync();
+
+const getFonts = () => font.loadAsync({
+  'bebas-neue': require('./assets/fonts/BebasNeue-Regular.ttf'),
+  'bungee-spice': require('./assets/fonts/BungeeSpice-Regular.ttf')
+});
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  useEffect(() => {
+    getFonts().then(() => {
+      setFontsLoaded(true);
+      SplashScreen.hideAsync();
+    });
+  }
+  , []);
+ 
+
+  if (fontsLoaded) {
+    return (
+      <Navigator />
+    );
+  } else {
+    return null;
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
