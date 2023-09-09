@@ -5,15 +5,15 @@ import ReviewDetails from '../screens/ReviewDetails';
 
 const Stack = createStackNavigator();
 
-const homeStack: React.FC = () => {
+const HomeStack: React.FC = () => {
     return (
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="Review Details" component={ReviewDetails} />
+                <Stack.Screen name="Home" options={{ headerShown: false }} component={Home} />
+                <Stack.Screen name="Review Details" options={{ headerShown: false }}component={ReviewDetails} />
             </Stack.Navigator>
     );
 }
 
-export default homeStack;
+export default HomeStack;
 
 
