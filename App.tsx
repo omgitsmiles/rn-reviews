@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import Home from './screens/Home';
 import * as font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import Navigator from './routes/homeStack';
+import Navigator from './routes/Drawer';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,7 +26,9 @@ export default function App() {
 
   if (fontsLoaded) {
     return (
-      <Navigator />
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
     );
   } else {
     return null;

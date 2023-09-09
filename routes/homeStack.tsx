@@ -7,12 +7,10 @@ const Stack = createStackNavigator();
 
 const homeStack: React.FC = () => {
     return (
-        <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Review Details" component={ReviewDetails} />
-         </Stack.Navigator>
-        </NavigationContainer>
+            </Stack.Navigator>
     );
 }
 
