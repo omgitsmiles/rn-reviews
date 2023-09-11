@@ -9,7 +9,7 @@ const HomeStack: React.FC = () => {
     return (
             <Stack.Navigator>
                 <Stack.Screen name="Home" options={{ headerShown: false }} component={Home} />
-                <Stack.Screen name="Review Details" options={{ headerShown: false }}component={ReviewDetails} />
+                <Stack.Screen name="Review Details"  component={ReviewDetails} />
             </Stack.Navigator>
     );
 }
