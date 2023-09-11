@@ -3,7 +3,8 @@ import { Image, ImageBackground, View, Text } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import ReviewDetails from "../screens/ReviewDetails";
 import About from "../screens/About";
-import HomeStack from "./HomeStack";   
+import HomeStack from "./HomeStack"; 
+import ReviewDetailHeader from "../shared/ReviewDetailHeader";  
 
 const Drawer = createDrawerNavigator();
 
